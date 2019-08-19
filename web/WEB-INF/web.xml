@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0"
+         metadata-complete="true">
+    <display-name>javaweb</display-name>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>cn.xmkeshe.cm.servlet.MemberLoginServlet</servlet-class>   <!--Servlet的类-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/MemberLoginServlet/*</url-pattern>                   <!--映射的url路径 -->
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeptServlet</servlet-name>
+        <servlet-class>cn.xmkeshe.cm.servlet.DeptServlet</servlet-class>   <!--Servlet的类-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeptServlet</servlet-name>
+        <url-pattern>/pages/back/dept/DeptServlet/*</url-pattern>                   <!--映射的url路径 -->
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MemberServlet</servlet-name>
+        <servlet-class>cn.xmkeshe.cm.servlet.MemberServlet</servlet-class>   <!--Servlet的类-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MemberServlet</servlet-name>
+        <url-pattern>/pages/back/member/MemberServlet/*</url-pattern>                   <!--映射的url路径 -->
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerServlet</servlet-name>
+        <servlet-class>cn.xmkeshe.cm.servlet.CustomerServlet</servlet-class>   <!--Servlet的类-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerServlet</servlet-name>
+        <url-pattern>/pages/back/customer/CustomerServlet/*</url-pattern>                   <!--映射的url路径 -->
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogsServlet</servlet-name>
+        <servlet-class>cn.xmkeshe.cm.servlet.LogsServlet</servlet-class>   <!--Servlet的类-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogsServlet</servlet-name>
+        <url-pattern>/pages/back/logs/LogsServlet/*</url-pattern>                   <!--映射的url路径 -->
+    </servlet-mapping>
+
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>cn.xmkeshe.utils.filter.MemberLoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/pages/back/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/login.jsp</url-pattern>
+    </filter-mapping>
+    <!--    <filter>-->
+<!--        <filter-name>EncodingFilter</filter-name>-->
+<!--        <filter-class>cn.xmkeshe.utils.filter.EncodingFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter>-->
+<!--        <filter-name>LoginFilter</filter-name>-->
+<!--        <filter-class>cn.xmkeshe.utils.filter.LoginFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>EncodingFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>LoginFilter</filter-name>-->
+<!--        <url-pattern>/pages/back/*</url-pattern>-->
+<!--    </filter-mapping>-->
+</web-app>
